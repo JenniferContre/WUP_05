@@ -17,23 +17,38 @@ triUmp <-read.csv(file="triUmpsal.csv",header=TRUE)
 
 A new  preventative aides drug (triUmpsal) is under test in clinical trials. Consider only the females, does this drug seem effective?  Hint - use dplyr to obtain that subpopulation with the filter command.
 
+Based on the dataset triUmp from clinical trials of the new drug, is there a relationship between the sex of a patient and the effectiveness of the preventative AIDS drug triUmpsal?
+
+$H_0$: There is no relationship between the sex of the patient and the effectiveness of the preventative AIDS drug triUmpsal.
+$H_A$: There is a relationship between the sex of the patient and the effectiveness of the preventative AIDS drug triUmpsal.
+
 # Methods
 
 <!--Decide on your methods:  use "variable analysis" or other appropriate descriptors.  Make sure to choose at least one graphical method and at least one numerical method. Discuss what data manipulations may be needed for example subsetting or other binning procedures and what sort of graphical displays and inferential tools will be used!-->
+
+Sex is categorical. 
+Infection is categorical. 
 
 # Results
 
 <!--Divide this section into two sub-sections:  One for your descriptive  results and one for your inferential results.!-->
 
 ## Descriptive Results
-
 ### Graphical Descriptive Results
 
 <!--Graphical results here.  Make sure to show your code.  Provide appropriate labels for axes, giving units if possible, and provide a good title for the graph, too.  Use the graphical results to describe the patterns if any that exist in the data as focused toward the research question. Bottom line is to explain the features of the graph that are relevant to conforming or departing to what is expected by your null hypothesis !-->
 
+```{r}
+barchartGC(~infected + gender,data=triUmp)
+barchartGC(~infected + gender,data=triUmp, type="percent")
+
+```
+According to this bar chart, there was a lower frequency of females with AIDS than men with AIDS. The percentage of women with AIDS was lower than that of men. 
+
 ### Numerical Descriptive Results
 
 <!--Numerical results go here. Use the numerical results to describe the patterns if any that exist in the data as focused toward the research question!-->
+
 
 ## Inferential Results
 
